@@ -37,13 +37,13 @@ namespace Lab6.Controllers
 
         // GET: Cars/d2cab0c9-7e94-409e-2b9a-08d88428ae4a
         /// <summary>
-        /// Get a Car.
+        /// Get a Student.
         /// </summary>
         /// <param id="id"></param>
-        /// <returns>A Car</returns>
-        /// <response code="201">Returns a collection of Cars</response>
+        /// <returns>A Student</returns>
+        /// <response code="201">Returns a collection of Students</response>
         /// <response code="400">If the id is malformed</response>      
-        /// <response code="404">If the Car is null</response>      
+        /// <response code="404">If the Student is null</response>      
         /// <response code="500">Internal error</response>
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -62,7 +62,7 @@ namespace Lab6.Controllers
 
         // POST: Cars
         /// <summary>
-        /// Creates a Car.
+        /// Creates a Student.
         /// </summary>
         /// <remarks>
         /// Sample request:
@@ -74,9 +74,9 @@ namespace Lab6.Controllers
         ///     }
         ///
         /// </remarks>
-        /// <returns>A newly created Car</returns>
-        /// <response code="201">Returns the newly created Car</response>
-        /// <response code="400">If the Car is malformed</response>      
+        /// <returns>A newly created Student</returns>
+        /// <response code="201">Returns the newly created Student</response>
+        /// <response code="400">If the Student is malformed</response>      
         /// <response code="500">Internal error</response>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
@@ -98,7 +98,7 @@ namespace Lab6.Controllers
 
         // PUT: Cars/5
         /// <summary>
-        /// Upserts a Car.
+        /// Upserts a Student.
         /// </summary>
         /// <remarks>
         /// Sample request:
@@ -111,10 +111,10 @@ namespace Lab6.Controllers
         ///
         /// </remarks>
         /// <param id="id"></param>
-        /// <returns>An upserted Car</returns>
-        /// <response code="200">Returns the updated Car</response>
-        /// <response code="201">Returns the newly created Car</response>
-        /// <response code="400">If the Car or id is malformed</response>      
+        /// <returns>An upserted Student</returns>
+        /// <response code="200">Returns the updated Student</response>
+        /// <response code="201">Returns the newly created Student</response>
+        /// <response code="400">If the Student or id is malformed</response>      
         /// <response code="500">Internal error</response>
         [HttpPut("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -151,10 +151,10 @@ namespace Lab6.Controllers
 
         // DELETE: Cars/5
         /// <summary>
-        /// Deletes a Car.
+        /// Deletes a Student.
         /// </summary>
         /// <param id="id"></param>
-        /// <response code="202">Car is deleted</response>
+        /// <response code="202">Student is deleted</response>
         /// <response code="400">If the id is malformed</response>      
         /// <response code="500">Internal error</response>
         [HttpDelete("{id}")]
@@ -163,8 +163,8 @@ namespace Lab6.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
-            var car = await _context.Students.FindAsync(id);
-            _context.Students.Remove(car);
+            var student = await _context.Students.FindAsync(id);
+            _context.Students.Remove(student);
             await _context.SaveChangesAsync();
             return Accepted();
         }
